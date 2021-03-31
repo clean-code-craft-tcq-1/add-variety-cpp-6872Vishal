@@ -1,5 +1,6 @@
 #include "typewise-alert.h"
 #include <stdio.h>
+#include <string>
 
 double LowerLimitValues[TOTAL_NUM_OF_COOLING]  = { 0,  0,  0};
 double HigherLimitValues[TOTAL_NUM_OF_COOLING] = {35, 45, 40};
@@ -104,7 +105,7 @@ void sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en)
   }
   else
   {
-    printf("%x : %x\n", header, breachType);
+    printf("%x : %x\n", header, breachType_en);
   }
   
 }
