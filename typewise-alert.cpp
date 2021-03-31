@@ -70,18 +70,24 @@ void sendToController(BreachType breachType) {
 
 void sendToEmail(BreachType breachType) {
   const char* recepient = "a.b@c.com";
-  switch(breachType) {
-    case TOO_LOW:
-      printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too low\n");
-      break;
-    case TOO_HIGH:
-      printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too high\n");
-      break;
-    case NORMAL:
-      break;
+  string CharBreachType[2] = {"Too Low", "Too High"};
+  if(breachType != NORMAL)
+  {
+  printf("To: %s\n", recepient);
+  printf("Hi, the temperature is %x\n",breachType);
   }
+//   switch(breachType) {
+//     case TOO_LOW:
+//       printf("To: %s\n", recepient);
+//       printf("Hi, the temperature is too low\n");
+//       break;
+//     case TOO_HIGH:
+//       printf("To: %s\n", recepient);
+//       printf("Hi, the temperature is too high\n");
+//       break;
+//     case NORMAL:
+//       break;
+//   }
 }
 
 void sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en)
@@ -89,19 +95,12 @@ void sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en)
   const unsigned short header = 0xfeed;
   const char* recepient = "a.b@c.com";
   if(alertTarget_en == TO_EMAIL)
-     {
-    switch(breachType_en) {
-    case TOO_LOW:
+  {
+      if(breachType != NORMAL)
+      {
       printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too low\n");
-      break;
-    case TOO_HIGH:
-      printf("To: %s\n", recepient);
-      printf("Hi, the temperature is too high\n");
-      break;
-    case NORMAL:
-      break;
-    }
+      printf("Hi, the temperature is %x\n",breachType);
+      }
   }
   else
   {
