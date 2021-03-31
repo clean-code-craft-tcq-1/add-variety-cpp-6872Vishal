@@ -3,7 +3,8 @@
 typedef enum {
   PASSIVE_COOLING,
   HI_ACTIVE_COOLING,
-  MED_ACTIVE_COOLING
+  MED_ACTIVE_COOLING,
+  TOTAL_NUM_OF_COOLING
 } CoolingType;
 
 typedef enum {
@@ -30,3 +31,4 @@ void checkAndAlert(
 
 void sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
+void sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en);
