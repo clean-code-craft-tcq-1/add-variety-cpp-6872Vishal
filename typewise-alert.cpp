@@ -70,7 +70,7 @@ void sendToController(BreachType breachType) {
 
 void sendToEmail(BreachType breachType) {
   const char* recepient = "a.b@c.com";
-  string CharBreachType[2] = {"Too Low", "Too High"};
+  std::string CharBreachType[2] = {"Too Low", "Too High"};
   if(breachType != NORMAL)
   {
   printf("To: %s\n", recepient);
@@ -96,10 +96,10 @@ void sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en)
   const char* recepient = "a.b@c.com";
   if(alertTarget_en == TO_EMAIL)
   {
-      if(breachType != NORMAL)
+      if(breachType_en != NORMAL)
       {
       printf("To: %s\n", recepient);
-      printf("Hi, the temperature is %x\n",breachType);
+      printf("Hi, the temperature is %x\n",breachType_en);
       }
   }
   else
