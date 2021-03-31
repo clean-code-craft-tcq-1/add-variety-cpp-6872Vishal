@@ -11,23 +11,23 @@ TEST_CASE("classifies the breach according to limits") {
   REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, 36) == TOO_HIGH);
 }
 
-TEST_CASE("classifies the breach according to limits") {
+TEST_CASE("classifies the breach according to limits 2") {
   REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, -1) == TOO_LOW);
 }
 
-TEST_CASE("classifies the breach according to limits") {
+TEST_CASE("classifies the breach according to limits 3") {
   REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, 56) == TOO_HIGH);
 }
 
-TEST_CASE("classifies the breach according to limits") {
+TEST_CASE("classifies the breach according to limits 4") {
   REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, -2.5) == TOO_LOW);
 }
 
-TEST_CASE("classifies the breach according to limits") {
+TEST_CASE("classifies the breach according to limits 5") {
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 41) == TOO_HIGH);
 }
 
-TEST_CASE("classifies the breach according to limits") {
+TEST_CASE("classifies the breach according to limits 6") {
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, -5.5) == TOO_LOW);
 }
 
