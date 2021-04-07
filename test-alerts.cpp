@@ -31,8 +31,3 @@ TEST_CASE("classifies the breach according to limits 6") {
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, -5.5) == TOO_LOW);
 }
 
-// checkAndAlert
-// TEST_CASE("Check and Alert Test Case") {
-// BatteryCharacter temp_st = {PASSIVE_COOLING, "BOSCH" };
-//   REQUIRE(checkAndAlert(TO_EMAIL,temp_st,22));
-// }
