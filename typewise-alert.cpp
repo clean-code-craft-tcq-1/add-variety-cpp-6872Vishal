@@ -22,7 +22,7 @@ void SendToEmail(BreachType TypeOfBreach)
   if(TypeOfBreach != NORMAL)
       {
       printf("To: %s\n", recepient);
-      printf("Hi, the temperature is %x\n",breachType_en);
+      printf("Hi, the temperature is %x\n",TypeOfBreach);
       }
 }
 
