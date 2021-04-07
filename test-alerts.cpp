@@ -77,7 +77,7 @@ TEST_CASE("checkandAlert unit testing 7")
   REQUIRE(checkAndAlert(TO_EMAIL,batterytesting_st,13) == NO_EN);
 }
 
-TEST_CASE("checkandAlert unit testing 7")
-{
-  REQUIRE(checkAndAlert() == NO_EN);
-}
+// TEST_CASE("checkandAlert unit testing 7")
+// {
+//   REQUIRE(checkAndAlert() == NO_EN);
+// }
