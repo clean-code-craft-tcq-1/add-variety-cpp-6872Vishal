@@ -31,6 +31,10 @@ TEST_CASE("classifies the breach according to limits 6") {
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, -5.5) == TOO_LOW);
 }
 
+TEST_CASE("classifies the breach according to limits 7") {
+  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 12) == NORMAL)
+}
+
 TEST_CASE("checkandAlert unit testing 1")
 {
   BatteryCharacter batterytesting_st = { PASSIVE_COOLING,"BMW"};
