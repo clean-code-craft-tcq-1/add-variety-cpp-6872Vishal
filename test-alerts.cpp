@@ -32,7 +32,7 @@ TEST_CASE("classifies the breach according to limits 6") {
 }
 
 TEST_CASE("classifies the breach according to limits 7") {
-  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 12) == NORMAL)
+  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 12) == NORMAL);
 }
 
 TEST_CASE("checkandAlert unit testing 1")
