@@ -55,7 +55,7 @@ void sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en)
   const char* recepient = "a.b@c.com";
   if(alertTarget_en == TO_EMAIL)
   {
-     void SendToEmail(breachType_en)
+     void SendToEmail(breachType_en);
   }
   else if(alertTarget_en == TO_CONSOLE)
   {
