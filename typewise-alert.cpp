@@ -34,11 +34,13 @@ BreachType classifyTemperatureBreach(
   if(temperatureInC < LowerLimitValues[coolingType]) {
     return TOO_LOW;
   }
-  if(temperatureInC > LowerLimitValues[coolingType]) {
+  else if(temperatureInC > HigherLimitValues[coolingType]) {
     return TOO_HIGH;
   }
+  else
+  {
   return NORMAL;
-  
+  }
 }
 
 IsAlertTriggered checkAndAlert(
