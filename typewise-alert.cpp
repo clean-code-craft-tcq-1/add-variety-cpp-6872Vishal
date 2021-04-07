@@ -15,6 +15,10 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   return NORMAL;
 }
 
+// void sendEmailToAlert(BreachType breachType)
+// {
+// }
+
 BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) {
   
@@ -51,6 +55,10 @@ void sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en)
       printf("To: %s\n", recepient);
       printf("Hi, the temperature is %x\n",breachType_en);
       }
+  }
+  else if(alertTarget_en == TO_CONSOLE)
+  {
+    printf("Sending Info to Console\n");
   }
   else
   {
