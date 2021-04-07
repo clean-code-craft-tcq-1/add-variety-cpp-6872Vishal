@@ -15,7 +15,7 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   return NORMAL;
 }
 
-void SendToEmail(BreachType TypeOfBreach)
+IsAlertTriggered SendToEmail(BreachType TypeOfBreach)
 {
   const char* recepient = "a.b@c.com";
   
@@ -23,7 +23,9 @@ void SendToEmail(BreachType TypeOfBreach)
       {
       printf("To: %s\n", recepient);
       printf("Hi, the temperature is %x\n",TypeOfBreach);
+      return YES_EN;
       }
+  return NO_EN;
 }
 
 BreachType classifyTemperatureBreach(
@@ -39,33 +41,36 @@ BreachType classifyTemperatureBreach(
   
 }
 
-void checkAndAlert(
+IsAlertTriggered checkAndAlert(
     AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
 
   BreachType breachType = classifyTemperatureBreach(
     batteryChar.coolingType, temperatureInC
   );
 
-  sendToOutputDevice(breachType,alertTarget);
+  return sendToOutputDevice(breachType,alertTarget);
   
 }
 
 
-void sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en)
+IsAlertTriggered sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en)
 {
   const unsigned short header = 0xfeed;
   
   if(alertTarget_en == TO_EMAIL)
   {
-    SendToEmail(breachType_en);
+    return SendToEmail(breachType_en);
   }
   else if(alertTarget_en == TO_CONSOLE)
   {
     printf("Sending Info to Console\n");
+    return YES_EN;
   }
   else
   {
     printf("%x : %x\n", header, breachType_en);
+    return YES_EN;
   }
   
+  return NO_EN;
 }
