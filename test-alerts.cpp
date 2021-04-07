@@ -30,4 +30,8 @@ TEST_CASE("classifies the breach according to limits 5") {
 TEST_CASE("classifies the breach according to limits 6") {
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, -5.5) == TOO_LOW);
 }
-
+BatteryCharacter batterytesting_st = { PASSIVE_COOLING,"BMW"};
+TEST_CASE("checkandAlert unit testing 1")
+{
+  REQUIRE(checkAndAlert(TO_CONTROLLER,batterytesting_st,30) == YES_EN);
+}
