@@ -76,3 +76,8 @@ TEST_CASE("checkandAlert unit testing 7")
   BatteryCharacter batterytesting_st = { MED_ACTIVE_COOLING,"BMW"};
   REQUIRE(checkAndAlert(TO_EMAIL,batterytesting_st,13) == NO_EN);
 }
+
+TEST_CASE("checkandAlert unit testing 7")
+{
+  REQUIRE(checkAndAlert() == NO_EN);
+}
