@@ -30,8 +30,45 @@ TEST_CASE("classifies the breach according to limits 5") {
 TEST_CASE("classifies the breach according to limits 6") {
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, -5.5) == TOO_LOW);
 }
-BatteryCharacter batterytesting_st = { PASSIVE_COOLING,"BMW"};
+
 TEST_CASE("checkandAlert unit testing 1")
 {
+  BatteryCharacter batterytesting_st = { PASSIVE_COOLING,"BMW"};
   REQUIRE(checkAndAlert(TO_CONTROLLER,batterytesting_st,30) == YES_EN);
+}
+
+TEST_CASE("checkandAlert unit testing 2")
+{
+  BatteryCharacter batterytesting_st = { HI_ACTIVE_COOLING,"BMW"};
+  REQUIRE(checkAndAlert(TO_CONTROLLER,batterytesting_st,42) == YES_EN);
+}
+
+TEST_CASE("checkandAlert unit testing 3")
+{
+  BatteryCharacter batterytesting_st = { MED_ACTIVE_COOLING,"BMW"};
+  REQUIRE(checkAndAlert(TO_CONTROLLER,batterytesting_st,39) == YES_EN);
+}
+
+TEST_CASE("checkandAlert unit testing 4")
+{
+  BatteryCharacter batterytesting_st = { MED_ACTIVE_COOLING,"BMW"};
+  REQUIRE(checkAndAlert(TO_CONSOLE,batterytesting_st,39) == YES_EN);
+}
+
+TEST_CASE("checkandAlert unit testing 5")
+{
+  BatteryCharacter batterytesting_st = { PASSIVE_COOLING,"BMW"};
+  REQUIRE(checkAndAlert(TO_EMAIL,batterytesting_st,10) == NO_EN);
+}
+
+TEST_CASE("checkandAlert unit testing 6")
+{
+  BatteryCharacter batterytesting_st = { HI_ACTIVE_COOLING,"BMW"};
+  REQUIRE(checkAndAlert(TO_EMAIL,batterytesting_st,15) == NO_EN);
+}
+
+TEST_CASE("checkandAlert unit testing 7")
+{
+  BatteryCharacter batterytesting_st = { MED_ACTIVE_COOLING,"BMW"};
+  REQUIRE(checkAndAlert(TO_EMAIL,batterytesting_st,13) == NO_EN);
 }
