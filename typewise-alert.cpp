@@ -17,6 +17,8 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
 
 void SendToEmail(BreachType TypeOfBreach)
 {
+  const char* recepient = "a.b@c.com";
+  
   if(TypeOfBreach != NORMAL)
       {
       printf("To: %s\n", recepient);
@@ -52,10 +54,10 @@ void checkAndAlert(
 void sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en)
 {
   const unsigned short header = 0xfeed;
-  const char* recepient = "a.b@c.com";
+  
   if(alertTarget_en == TO_EMAIL)
   {
-     void SendToEmail(breachType_en);
+    SendToEmail(breachType_en);
   }
   else if(alertTarget_en == TO_CONSOLE)
   {
