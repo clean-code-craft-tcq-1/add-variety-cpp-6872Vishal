@@ -13,6 +13,11 @@ typedef enum {
   TOO_HIGH
 } BreachType;
 
+typedef enum {
+  NO_EN,
+  YES_EN
+}IsAlertTriggered;
+
 BreachType inferBreach(double value, double lowerLimit, double upperLimit);
 BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC);
 
@@ -27,9 +32,9 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
-void checkAndAlert(
+IsAlertTriggered checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
-void sendToController(BreachType breachType);
-void sendToEmail(BreachType breachType);
-void sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en);
+
+IsAlertTriggered SendToEmail(BreachType TypeOfBreach);
+IsAlertTriggered sendToOutputDevice(BreachType breachType_en,AlertTarget alertTarget_en);
